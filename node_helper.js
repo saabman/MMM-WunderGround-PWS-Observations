@@ -14,7 +14,7 @@ const exec = require('child_process').exec;
 
 
 
-module.exports = NodeHelper.create({
+module.exports = NodeHelper.create( {
   start: function () {
     console.log('MMM-WunderGround-PWS-Observations helper started ...');
 	this.fetcherRunning = false;
@@ -40,9 +40,10 @@ module.exports = NodeHelper.create({
         var Wurl = this.config.apiBase + params;
         console.log(Wurl);
 		if ( this.config.debug === 1 ) {
-			console.log(moment().format() + " 4 " + this.name  + ": " + Wurl);	
+			console.log(moment().format() + " 4 " + this.name  + ": " + Wurl);
+				
 		}
-	  
+		
 //		Requests Current weather		
         request({
             url: Wurl,
@@ -59,9 +60,14 @@ module.exports = NodeHelper.create({
                         
                     setTimeout(function() {
                         self.fetchWunderground();
-                    }, self.config.updateInterval);
+                    }, 
+                    
+                    self.config.updateInterval
+                    
+                    );
 
-                }
+                },
         );
-  },
-
+       }
+       
+}); 
