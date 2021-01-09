@@ -19,6 +19,8 @@ Module.register("MMM-WunderGround-PWS-Observations", {
         showWindDirection: true,
         retryDelay: 2500,
         apiBase: "https://api.weather.com/v2/pws/observations/",
+        socknot: "GET_WUNDERGROUND",
+		sockrcv: "WUNDERGROUND",
         },
         
     // Define required translations.
