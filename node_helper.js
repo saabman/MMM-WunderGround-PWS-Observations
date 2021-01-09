@@ -21,6 +21,19 @@ module.exports = NodeHelper.create( {
 	this.wunderPayload = "";
   },
   
+   //Subclass socketNotificationReceived received.
+  socketNotificationReceived: function(notification, payload) {
+    console.log(notification);
+    
+    var self = this;
+    
+    if(notification === "GET_WUNDERGROUND"){
+            
+        this.config = payload;
+        if ( this.config.debug === 1 ) {
+			console.log('Lets get WunderGround requested!!!!!');
+		},
+		 
   fetchWunderground: function() {
         var self = this;
         this.fetcherRunning = true; 
