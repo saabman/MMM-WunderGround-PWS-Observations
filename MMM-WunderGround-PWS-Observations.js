@@ -239,14 +239,14 @@ Module.register("MMM-WunderGround-PWS-Observations", {
 
         if ( this.config.debug === 1 ) {
 			Log.info('Wunderground received ' + notification);
-			
+	}		
 			        if (notification === this.config.sockrcv) {
-            if ( this.config.debug === 1 ) {
-				Log.info('received ' + this.config.sockrcv);
-				Log.info(payload);
-			}
-            self.processWeather(JSON.parse(payload));
-        }
-	},
+            				if ( this.config.debug === 1 ) {
+					Log.info('received ' + this.config.sockrcv);
+					Log.info(payload);
+					}
+            			self.processWeather(JSON.parse(payload));
+        			}
+	}
 
 });
