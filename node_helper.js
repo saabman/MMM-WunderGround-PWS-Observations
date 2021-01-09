@@ -32,7 +32,12 @@ module.exports = NodeHelper.create( {
         this.config = payload;
         if ( this.config.debug === 1 ) {
 			console.log('Lets get WunderGround requested!!!!!');
-		},
+		}
+		        if (!this.fetcherRunning) {
+            this.fetchWunderground();
+        }
+	}
+	},
 		 
   fetchWunderground: function() {
         var self = this;

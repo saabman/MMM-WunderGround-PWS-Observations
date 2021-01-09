@@ -164,7 +164,7 @@ Module.register("MMM-WunderGround-PWS-Observations", {
 //			 this.Humidity = this.Humidity.substring(0, this.Humidity.length - 1);
 //           this.windSpeed = "wi-wind-beaufort-" + this.ms2Beaufort(data.current_observation.wind_kph);
     	this.windSpeedKph = data.observations[0]["metric"].windSpeed;
-
+		this.rainfall = data.observations[0]["metric"].precipTotal;
 		console.log (this.rainfall);
 
     	if (this.config.units == "metric") {
@@ -174,10 +174,6 @@ Module.register("MMM-WunderGround-PWS-Observations", {
         		this.temperature = 100 //data.current_observation.temp_f;
             	var fc_text = 98 //data.forecast.txt_forecast.forecastday[0].fcttext;
             	}
-            
-     	if ( this.config.debug === 1 ) {
-			Log.log(this.forecast);
-			}
 
         	this.loaded = true;
         	this.updateDom(this.config.animationSpeed);
