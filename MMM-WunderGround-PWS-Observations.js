@@ -247,6 +247,6 @@ Module.register("MMM-WunderGround-PWS-Observations", {
 			}
             self.processWeather(JSON.parse(payload));
         }
-	}
+	},
 
 });
