@@ -49,6 +49,13 @@ Module.register("MMM-WunderGround-PWS-Observations", {
         this.getWunder();
         },
         
+	getWunder: function() {
+        if ( this.config.debug === 1 ) {
+			Log.info("WunderGround: Getting weather.");
+		}
+        //this.sendSocketNotification("GET_WUNDERGROUND", this.config);
+		this.sendSocketNotification(this.config.socknot, this.config);
+    },
         
      // Override dom generator.
     getDom: function() {
