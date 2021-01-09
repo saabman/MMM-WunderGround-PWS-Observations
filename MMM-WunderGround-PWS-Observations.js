@@ -137,9 +137,10 @@ Module.register("MMM-WunderGround-PWS-Observations", {
 
             wrapper.appendChild(small);
             wrapper.appendChild(large);
-            
             }
-            
+	    return wrapper;
+    },
+	    
     /* processWeather(data)
      * Uses the received data to set the various values.
      *
@@ -171,7 +172,7 @@ Module.register("MMM-WunderGround-PWS-Observations", {
 
         	this.loaded = true;
         	this.updateDom(this.config.animationSpeed);
-        	}
+        	
     },
     
     /* deg2Cardinal(degrees)
