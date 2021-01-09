@@ -94,6 +94,9 @@ Module.register("MMM-WunderGround-PWS-Observations", {
         if (this.config.currentweather === 1) {
             var small = document.createElement("div");
             small.className = "normal medium";
+            
+            var large = document.createElement("div");
+            large.className = "large light";
 
             var spacer = document.createElement("span");
             spacer.innerHTML = "&nbsp;";
@@ -141,7 +144,7 @@ Module.register("MMM-WunderGround-PWS-Observations", {
             var temperature = document.createElement("span");
             temperature.className = "bright";
             temperature.innerHTML = " " + this.temperature + "&deg;";
-            large.appendChild(weatherIcon);
+            
             large.appendChild(temperature);
 
             wrapper.appendChild(small);
@@ -159,13 +162,16 @@ Module.register("MMM-WunderGround-PWS-Observations", {
     processWeather: function(data) {
     
 		this.windDirection = this.deg2Cardinal(data.observations[0].winddir);
+		console.log ("wind " + this.windDirection);
 //           this.windDirectionTxt = data.current_observation.wind_dir;
     	this.Humidity = data.observations[0].humidity;
+    	console.log ("Humidity " + this.Humidity);
 //			 this.Humidity = this.Humidity.substring(0, this.Humidity.length - 1);
 //           this.windSpeed = "wi-wind-beaufort-" + this.ms2Beaufort(data.current_observation.wind_kph);
     	this.windSpeedKph = data.observations[0]["metric"].windSpeed;
+    	console.log ("wind speed " + this.windSpeedKph);
 		this.rainfall = data.observations[0]["metric"].precipTotal;
-		console.log (this.rainfall);
+		console.log ("Rainfall " + this.rainfall);
 
     	if (this.config.units == "metric") {
     		this.temperature = data.observations[0]["metric"].temp;
