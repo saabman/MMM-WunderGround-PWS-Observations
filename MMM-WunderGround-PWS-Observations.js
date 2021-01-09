@@ -32,7 +32,7 @@ Module.register("MMM-WunderGround-PWS-Observations", {
             pl: "translations/pl.json"
 
         };
-    }
+    },
     getScripts: function() {
         return ["moment.js"];
     },
