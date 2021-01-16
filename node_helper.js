@@ -32,6 +32,7 @@ module.exports = NodeHelper.create( {
         this.config = payload;
         if ( this.config.debug === 1 ) {
 			console.log('Lets get WunderGround requested!!!!!');
+			console.log(this.config);
 		}
 		        if (!this.fetcherRunning) {
             this.fetchWunderground();
@@ -50,8 +51,14 @@ module.exports = NodeHelper.create( {
         }
 
         params += this.config.pws;
-        params += "&format=json&units=m";
-//        params += this.config.units;
+        params += "&format=json&units=";
+        
+        if (this.config.units == "metric") {
+        	params +="m";
+        	}else{
+        	params +="e";
+        	}
+        
         params += "&apiKey=";
         params += this.config.apikey;
         

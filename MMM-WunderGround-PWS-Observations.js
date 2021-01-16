@@ -38,6 +38,15 @@ Module.register("MMM-WunderGround-PWS-Observations", {
     getScripts: function() {
         return ["moment.js"];
     },
+    
+        // Define required Styles.
+    getStyles: function() {
+        return [
+        "weather-icons.css", 
+        "weather-icons-wind.css",
+        this.file("MMM-WunderGround-PWS-Observations.css")
+        ];
+    },
         
 	 // Define start sequence.
     start: function() {
@@ -92,11 +101,6 @@ Module.register("MMM-WunderGround-PWS-Observations", {
             return wrapper;
         }
         if (this.config.currentweather === 1) {
-            var small = document.createElement("div");
-            small.className = "normal medium";
-            
-            var large = document.createElement("div");
-            large.className = "large light";
 
             var spacer = document.createElement("span");
             spacer.innerHTML = "&nbsp;";
@@ -104,52 +108,164 @@ Module.register("MMM-WunderGround-PWS-Observations", {
             var table_sitrep = document.createElement("table");
 
             var row_sitrep = document.createElement("tr");
-
-
-            var windIcon = document.createElement("td");
-            if (this.config.windunits == "kph") {
-                windIcon.innerHTML = this.windSpeedKph + "<sub>Kph</sub>";
-            } else {
-                windIcon.className = "wi " + this.windSpeed;
-            }
-            row_sitrep.appendChild(windIcon);
             row_sitrep.className = "pop";
+			console.log(row_sitrep);
+			
+			var row1_sitrep = document.createElement("tr");
+            row1_sitrep.className = "pop";
+			console.log(row_sitrep);
+			
+			var row2_sitrep = document.createElement("tr");
+			row2_sitrep.className = "pop";
+			
+			var row3_sitrep = document.createElement("tr");
+			row3_sitrep.className = "pop";
+			
+			var row4_sitrep = document.createElement("tr");
+			row4_sitrep.className = "pop";
 
-            var windDirectionIcon = document.createElement("td");
-            if (this.config.UseCardinals === 0) {
-                windDirectionIcon.className = "wi wi-wind " + this.windDirection;
-                windDirectionIcon.innerHTML = "&nbsp;";
+			var row5_sitrep = document.createElement("tr");
+			row5_sitrep.className = "pop";
+			
+			var row6_sitrep = document.createElement("tr");
+			row6_sitrep.className = "pop";
+			
+			var row7_sitrep = document.createElement("tr");
+			row7_sitrep.className = "pop";
+			
+			var row8_sitrep = document.createElement("tr");
+			row8_sitrep.className = "pop";
+			
+			var row9_sitrep = document.createElement("tr");
+			row9_sitrep.className = "pop";
+			
+			var row10_sitrep = document.createElement("tr");
+			row10_sitrep.className = "pop";
+			
+			var windIcon = document.createElement("td");
+			windIcon.className = "wi wi-windy";
+			row_sitrep.appendChild(windIcon);
+			
+            var wind = document.createElement("td");
+            console.log(wind);
+            if (this.config.units == "metric") {
+                wind.innerHTML = " " + this.windSpeed + "<sub>Kmh</sub>";
             } else {
-                windDirectionIcon.innerHTML = this.windDirectionTxt;
+                wind.innerHTML = " " + this.windSpeed + "<sub=>mph</sub>";
             }
+            console.log(wind);
+            row_sitrep.appendChild(wind);
+            
+            var windDirectionIcon = document.createElement("td");
+            windDirectionIcon.className = "wi wi-wind " + this.windDirection;
             row_sitrep.appendChild(windDirectionIcon);
-
+            
+            var windGustIcon = document.createElement("td");
+            windGustIcon.className = "wi wi-strong-wind";// + this.windGust;
+            row1_sitrep.appendChild(windGustIcon);
+            
+            var windGust = document.createElement("td");
+            if (this.config.units == "metric") {
+                windGust.innerHTML = " " + this.windGust + "<sub>Kmh</sub>";
+            } else {
+                windGust.innerHTML = " " + this.windGust + "<sub=>mph</sub>";
+            }
+            row1_sitrep.appendChild(windGust);
+			
             var HumidityIcon = document.createElement("td");
             HumidityIcon.className = "wi wi-humidity lpad";
-            row_sitrep.appendChild(HumidityIcon);
+            row2_sitrep.appendChild(HumidityIcon);
 
             var HumidityTxt = document.createElement("td");
             HumidityTxt.innerHTML = this.Humidity + "&nbsp;";
-            HumidityTxt.className = "vcen left";
-            row_sitrep.appendChild(HumidityTxt);
+            row2_sitrep.appendChild(HumidityTxt);
+            
+            var UVIcon = document.createElement("td");
+            UVIcon.className = "wi wi-hot";
+            row3_sitrep.appendChild(UVIcon);
+            
+            var UVTxt = document.createElement("td");
+            UVTxt.innerHTML = this.UV;//this.UV;
+            row3_sitrep.appendChild(UVTxt);
   
             var RainIcon = document.createElement("td");
             RainIcon.className = "wi wi-umbrella";
-            row_sitrep.appendChild(RainIcon);
+            row4_sitrep.appendChild(RainIcon);
                         
             var rainfall = document.createElement("td");
-            rainfall.innerHTML = " " + this.rainfall + "mm";
-            row_sitrep.appendChild(rainfall);
-            
-            var temperature = document.createElement("span");
-            temperature.className = "bright";
-            temperature.innerHTML = " " + this.temperature + "&deg;";
-            
-            large.appendChild(temperature);
-
-            wrapper.appendChild(small);
-            wrapper.appendChild(large);
+            if (this.config.units == "metric") {
+                rainfall.innerHTML = " " + this.rainfall + "mm";
+            } else {
+                rainfall.innerHTML = " " + this.rainfall + "\"";
             }
+            row4_sitrep.appendChild(rainfall);
+            
+            var rainRateIcon = document.createElement("td");
+            rainRateIcon.className = "wi wi-raindrops";
+            row5_sitrep.appendChild(rainRateIcon);
+            
+            var rainRate = document.createElement("td");
+            if (this.config.units == "metric") {
+                rainRate.innerHTML = " " + this.rainRate + "mmph";
+            } else {
+            	rainRate.innerHTML = this.rainRate + "\"ph "; //this.rainRate
+            }
+            row5_sitrep.appendChild(rainRate);
+            
+            var pressureIcon = document.createElement("td");
+            pressureIcon.className = "wi wi-barometer";
+            row6_sitrep.appendChild(pressureIcon);
+            
+            var pressure = document.createElement("td");
+            pressure.innerHTML = this.pressure;
+            row6_sitrep.appendChild(pressure);
+            
+            var dewPointIcon = document.createElement("td");
+            dewPointIcon.innerHTML = "DP";
+            row7_sitrep.appendChild(dewPointIcon);
+            
+            var dewPoint = document.createElement("td");
+            dewPoint.innerHTML = " " + this.dewpt + "&deg;";
+            row7_sitrep.appendChild(dewPoint);
+            
+            var windChillIcon = document.createElement("td");
+            windChillIcon.innerHTML = "WC";
+            row8_sitrep.appendChild(windChillIcon);
+            
+            var windChill = document.createElement("td");
+            windChill.innerHTML = " " + this.windChill + "&deg;";
+            row8_sitrep.appendChild(windChill);
+            
+            var heatIndexIcon = document.createElement("td");
+            heatIndexIcon.innerHTML = "HI";
+            row9_sitrep.appendChild(heatIndexIcon);
+            
+            var heatIndex = document.createElement("td");
+            heatIndex.innerHTML = " " + this.heatIndex + "&deg;";
+            row9_sitrep.appendChild(heatIndex);
+            
+            var temperatureIcon = document.createElement("td");
+            temperatureIcon.className = "wi wi-thermometer";
+            row10_sitrep.appendChild(temperatureIcon);
+            
+            var temperature = document.createElement("td"); //span
+            temperature.innerHTML = " " + this.temperature + "&deg;";
+            row10_sitrep.appendChild(temperature);
+            
+        
+			wrapper.appendChild(row_sitrep);
+			wrapper.appendChild(row1_sitrep);
+			wrapper.appendChild(row2_sitrep);
+			wrapper.appendChild(row3_sitrep);
+			wrapper.appendChild(row4_sitrep);
+			wrapper.appendChild(row5_sitrep);
+			wrapper.appendChild(row6_sitrep);
+			wrapper.appendChild(row7_sitrep);
+			wrapper.appendChild(row8_sitrep);
+			wrapper.appendChild(row9_sitrep);
+			wrapper.appendChild(row10_sitrep);
+            }
+            console.log(wrapper);
 	    return wrapper;
     },
 	    
@@ -162,27 +278,25 @@ Module.register("MMM-WunderGround-PWS-Observations", {
     processWeather: function(data) {
     
 		this.windDirection = this.deg2Cardinal(data.observations[0].winddir);
-		console.log ("wind " + this.windDirection);
-//           this.windDirectionTxt = data.current_observation.wind_dir;
     	this.Humidity = data.observations[0].humidity;
-    	console.log ("Humidity " + this.Humidity);
-//			 this.Humidity = this.Humidity.substring(0, this.Humidity.length - 1);
-//           this.windSpeed = "wi-wind-beaufort-" + this.ms2Beaufort(data.current_observation.wind_kph);
-    	this.windSpeedKph = data.observations[0]["metric"].windSpeed;
-    	console.log ("wind speed " + this.windSpeedKph);
-		this.rainfall = data.observations[0]["metric"].precipTotal;
-		console.log ("Rainfall " + this.rainfall);
+		this.UV = data.observations[0].uv;
+    
+    	this.temperature = data.observations[0][this.config.units].temp;
+    	
+    	console.log(this.config.units + " " + this.temperature)
+    	
+    	this.heatIndex = data.observations[0][this.config.units].heatIndex;
+    	this.dewpt = data.observations[0][this.config.units].dewpt;
+    	this.windChill =data.observations[0][this.config.units].windChill;
+    	this.windSpeed = data.observations[0][this.config.units].windSpeed;
+    	this.windGust = data.observations[0][this.config.units].windGust;
+    	this.pressure = data.observations[0][this.config.units].pressure;
+    	this.rainRate = data.observations[0][this.config.units].precipRate;
+		this.rainfall = data.observations[0][this.config.units].precipTotal;
 
-    	if (this.config.units == "metric") {
-    		this.temperature = data.observations[0]["metric"].temp;
-        	var fc_text = 99 //data.forecast.txt_forecast.forecastday[0].fcttext_metric.replace(/(.*\d+)(C)(.*)/gi, "$1°C$3");
-        		} else {
-        		this.temperature = 100 //data.current_observation.temp_f;
-            	var fc_text = 98 //data.forecast.txt_forecast.forecastday[0].fcttext;
-            	}
 
-        	this.loaded = true;
-        	this.updateDom(this.config.animationSpeed);
+        this.loaded = true;
+        this.updateDom(this.config.animationSpeed);
         	
     },
     

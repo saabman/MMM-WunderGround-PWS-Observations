@@ -1,4 +1,4 @@
-.MMM-WunderGround .weathericon {
+.MMM-WunderGround-PWS-Observations .weathericon {
   font-size: 75%;
   line-height: 65px;
   display: inline-block;
@@ -6,27 +6,27 @@
   -webkit-transform: translate(0, -3px); /* Safari */
   transform: translate(0, -3px);
 } 
-.MMM-WunderGround .day {
+.MMM-WunderGround-PWS-Observations .day {
   padding-left: 0;
 #  padding-right: 10px;
 }
 
-.MMM-WunderGround .weather-icon {
+.MMM-WunderGround-PWS-Observations .weather-icon {
   padding-left: 0px;
   text-align: center;
 }
 
-.MMM-WunderGround .max-temp {
+.MMM-WunderGround-PWS-Observations .max-temp {
   padding-left: 0px;
   padding-right: 0;
 }
 
-.MMM-WunderGround .min-temp {
+.MMM-WunderGround-PWS-Observations .min-temp {
 #  padding-left: 10px;
 #  padding-right: 0;
 }
 
-.MMM-WunderGround .forecastText {
+.MMM-WunderGround-PWS-Observations .forecastText {
 # padding-left: 10px;
 #  padding-right: 0;
 #  word-wrap: break-word;
@@ -34,31 +34,38 @@
 #  rowspan: 0;
 }
 
-.MMM-WunderGround .tableheader {
+.MMM-WunderGround-PWS-Observations .tableheader {
   font-size: 75%;
   text-align: center;
 } 
 
-.MMM-WunderGround .hour {
+.MMM-WunderGround-PWS-Observations .hour {
   font-size: 75%;
   text-align: center;
  } 
 
-.MMM-WunderGround .pop {
+.MMM-WunderGround-PWS-Observations .pop {
+   text-align: right;
   font-size: 75%;
 } 
-.MMM-WunderGround .mm {
+.MMM-WunderGround-PWS-Observations .mm {
   font-size: 75%;
 } 
 
-.MMM-WunderGround .green {
+.MMM-WunderGround-PWS-Observations .green {
   color: #83FFB3;
 }
 
-.MMM-WunderGround .yellow {
+.MMM-WunderGround-PWS-Observations .yellow {
   color: yellow;
 }
 
-.MMM-WunderGround .red {
+.MMM-WunderGround-PWS-Observations .red {
+  color: #FF4C4C;
+}
+
+.MMM-WunderGround-PWS-Observations .large1 {
+  float: right;
+  font-size: 200%;
   color: #FF4C4C;
 }
