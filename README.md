@@ -2,6 +2,9 @@
 
 A basic module for displaying weather observations from a WunderGound PWS
 
+The Weather Icons used in this module are created and maintained by Erik Flowers. v1.0 artwork by Lukas Bischoff. v1.1 - 2.0 artwork by Erik Flowers www.weathericons.io
+
+
 Requires WunderGround API Key. Available for free for PWS opperators
 
 Your Station ID.
