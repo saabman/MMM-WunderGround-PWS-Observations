@@ -100,7 +100,7 @@ Module.register("MMM-WunderGround-PWS-Observations", {
             wrapper.className = "dimmed light small";
             return wrapper;
         }
-        if (this.config.currentweather === 1) {
+        
 
             var spacer = document.createElement("span");
             spacer.innerHTML = "&nbsp;";
@@ -142,129 +142,156 @@ Module.register("MMM-WunderGround-PWS-Observations", {
 			var row10_sitrep = document.createElement("tr");
 			row10_sitrep.className = "pop";
 			
-			var windIcon = document.createElement("td");
-			windIcon.className = "wi wi-windy";
-			row_sitrep.appendChild(windIcon);
+			if (this.config.wind == "1"){
 			
-            var wind = document.createElement("td");
-            console.log(wind);
-            if (this.config.units == "metric") {
-                wind.innerHTML = " " + this.windSpeed + "<sub>Kmh</sub>";
-            } else {
-                wind.innerHTML = " " + this.windSpeed + "<sub=>mph</sub>";
-            }
-            console.log(wind);
-            row_sitrep.appendChild(wind);
-            
-            var windDirectionIcon = document.createElement("td");
-            windDirectionIcon.className = "wi wi-wind " + this.windDirection;
-            row_sitrep.appendChild(windDirectionIcon);
-            
-            var windGustIcon = document.createElement("td");
-            windGustIcon.className = "wi wi-strong-wind";// + this.windGust;
-            row1_sitrep.appendChild(windGustIcon);
-            
-            var windGust = document.createElement("td");
-            if (this.config.units == "metric") {
-                windGust.innerHTML = " " + this.windGust + "<sub>Kmh</sub>";
-            } else {
-                windGust.innerHTML = " " + this.windGust + "<sub=>mph</sub>";
-            }
-            row1_sitrep.appendChild(windGust);
+				var windIcon = document.createElement("td");
+				windIcon.className = "wi wi-windy";
+				row_sitrep.appendChild(windIcon);
 			
-            var HumidityIcon = document.createElement("td");
-            HumidityIcon.className = "wi wi-humidity lpad";
-            row2_sitrep.appendChild(HumidityIcon);
+            	var wind = document.createElement("td");
+            	console.log(wind);
+            	if (this.config.units == "metric") {
+                	wind.innerHTML = " " + this.windSpeed + "<sub>Kmh</sub>";
+            	} else {
+                	wind.innerHTML = " " + this.windSpeed + "<sub=>mph</sub>";
+            	}
+            
+            	row_sitrep.appendChild(wind);
+            
+            	var windDirectionIcon = document.createElement("td");
+            	windDirectionIcon.className = "wi wi-wind " + this.windDirection;
+            	row_sitrep.appendChild(windDirectionIcon);
+            	wrapper.appendChild(row_sitrep);
+            
+            	var windGustIcon = document.createElement("td");
+            	windGustIcon.className = "wi wi-strong-wind";// + this.windGust;
+            	row1_sitrep.appendChild(windGustIcon);
+            
+            	var windGust = document.createElement("td");
+            	if (this.config.units == "metric") {
+                	windGust.innerHTML = " " + this.windGust + "<sub>Kmh</sub>";
+            	} else {
+                	windGust.innerHTML = " " + this.windGust + "<sub=>mph</sub>";
+            	}
+            	row1_sitrep.appendChild(windGust);
+            	wrapper.appendChild(row1_sitrep);
+            	
+			}
+			
+			if (this.config.humidty == "1"){ 
+            	var HumidityIcon = document.createElement("td");
+            	HumidityIcon.className = "wi wi-humidity lpad";
+            	row2_sitrep.appendChild(HumidityIcon);
 
-            var HumidityTxt = document.createElement("td");
-            HumidityTxt.innerHTML = this.Humidity + "&nbsp;";
-            row2_sitrep.appendChild(HumidityTxt);
+            	var HumidityTxt = document.createElement("td");
+            	HumidityTxt.innerHTML = this.Humidity + "&nbsp;";
+            	row2_sitrep.appendChild(HumidityTxt);
+            	wrapper.appendChild(row2_sitrep);
+            	
+            }
             
-            var UVIcon = document.createElement("td");
-            UVIcon.className = "wi wi-hot";
-            row3_sitrep.appendChild(UVIcon);
+            if (this.config.UV == "1"){
+            	var UVIcon = document.createElement("td");
+            	UVIcon.className = "wi wi-hot";
+            	row3_sitrep.appendChild(UVIcon);
             
-            var UVTxt = document.createElement("td");
-            UVTxt.innerHTML = this.UV;//this.UV;
-            row3_sitrep.appendChild(UVTxt);
+            	var UVTxt = document.createElement("td");
+            	UVTxt.innerHTML = this.UV;//this.UV;
+            	row3_sitrep.appendChild(UVTxt);
+            	wrapper.appendChild(row3_sitrep);
+            	
+            }
   
-            var RainIcon = document.createElement("td");
-            RainIcon.className = "wi wi-umbrella";
-            row4_sitrep.appendChild(RainIcon);
+  			if (this.config.rain == "1"){
+            	var RainIcon = document.createElement("td");
+            	RainIcon.className = "wi wi-umbrella";
+            	row4_sitrep.appendChild(RainIcon);
                         
-            var rainfall = document.createElement("td");
-            if (this.config.units == "metric") {
-                rainfall.innerHTML = " " + this.rainfall + "mm";
-            } else {
-                rainfall.innerHTML = " " + this.rainfall + "\"";
+            	var rainfall = document.createElement("td");
+            	if (this.config.units == "metric") {
+                	rainfall.innerHTML = " " + this.rainfall + "mm";
+            	} else {
+                	rainfall.innerHTML = " " + this.rainfall + "\"";
+            	}
+            	row4_sitrep.appendChild(rainfall);
+            	wrapper.appendChild(row4_sitrep);
+            	
             }
-            row4_sitrep.appendChild(rainfall);
             
-            var rainRateIcon = document.createElement("td");
-            rainRateIcon.className = "wi wi-raindrops";
-            row5_sitrep.appendChild(rainRateIcon);
+            if (this.config.rainRate == "1"){
+            	var rainRateIcon = document.createElement("td");
+            	rainRateIcon.className = "wi wi-raindrops";
+            	row5_sitrep.appendChild(rainRateIcon);
             
-            var rainRate = document.createElement("td");
-            if (this.config.units == "metric") {
-                rainRate.innerHTML = " " + this.rainRate + "mmph";
-            } else {
-            	rainRate.innerHTML = this.rainRate + "\"ph "; //this.rainRate
+            	var rainRate = document.createElement("td");
+            	if (this.config.units == "metric") {
+                	rainRate.innerHTML = " " + this.rainRate + "mmph";
+            	} else {
+            		rainRate.innerHTML = this.rainRate + "\"ph "; //this.rainRate
+            	}
+            	row5_sitrep.appendChild(rainRate);
+            	wrapper.appendChild(row5_sitrep);
+            	
             }
-            row5_sitrep.appendChild(rainRate);
             
-            var pressureIcon = document.createElement("td");
-            pressureIcon.className = "wi wi-barometer";
-            row6_sitrep.appendChild(pressureIcon);
+            if (this.config.pressure == "1"){
+            	var pressureIcon = document.createElement("td");
+            	pressureIcon.className = "wi wi-barometer";
+            	row6_sitrep.appendChild(pressureIcon);
             
-            var pressure = document.createElement("td");
-            pressure.innerHTML = this.pressure;
-            row6_sitrep.appendChild(pressure);
+            	var pressure = document.createElement("td");
+            	pressure.innerHTML = this.pressure;
+            	row6_sitrep.appendChild(pressure);
+            	wrapper.appendChild(row6_sitrep);
+            	
+            }
             
-            var dewPointIcon = document.createElement("td");
-            dewPointIcon.innerHTML = "DP";
-            row7_sitrep.appendChild(dewPointIcon);
+            if (this.config.dewPoint == "1"){
+            	var dewPointIcon = document.createElement("td");
+            	dewPointIcon.innerHTML = "DP";
+            	row7_sitrep.appendChild(dewPointIcon);
             
-            var dewPoint = document.createElement("td");
-            dewPoint.innerHTML = " " + this.dewpt + "&deg;";
-            row7_sitrep.appendChild(dewPoint);
+            	var dewPoint = document.createElement("td");
+            	dewPoint.innerHTML = " " + this.dewpt + "&deg;";
+            	row7_sitrep.appendChild(dewPoint);
+            	wrapper.appendChild(row7_sitrep);
+            	
+            }
             
-            var windChillIcon = document.createElement("td");
-            windChillIcon.innerHTML = "WC";
-            row8_sitrep.appendChild(windChillIcon);
+            if (this.config.windChill == "1"){
+            	var windChillIcon = document.createElement("td");
+            	windChillIcon.innerHTML = "WC";
+            	row8_sitrep.appendChild(windChillIcon);
             
-            var windChill = document.createElement("td");
-            windChill.innerHTML = " " + this.windChill + "&deg;";
-            row8_sitrep.appendChild(windChill);
+            	var windChill = document.createElement("td");
+            	windChill.innerHTML = " " + this.windChill + "&deg;";
+            	row8_sitrep.appendChild(windChill);
+            	wrapper.appendChild(row8_sitrep);
+            	
+            }
             
-            var heatIndexIcon = document.createElement("td");
-            heatIndexIcon.innerHTML = "HI";
-            row9_sitrep.appendChild(heatIndexIcon);
+            if (this.config.heatIndex == "1"){
+            	var heatIndexIcon = document.createElement("td");
+            	heatIndexIcon.innerHTML = "HI";
+            	row9_sitrep.appendChild(heatIndexIcon);
             
-            var heatIndex = document.createElement("td");
-            heatIndex.innerHTML = " " + this.heatIndex + "&deg;";
-            row9_sitrep.appendChild(heatIndex);
+            	var heatIndex = document.createElement("td");
+            	heatIndex.innerHTML = " " + this.heatIndex + "&deg;";
+            	row9_sitrep.appendChild(heatIndex);
+            	wrapper.appendChild(row9_sitrep);
+            }
             
-            var temperatureIcon = document.createElement("td");
-            temperatureIcon.className = "wi wi-thermometer";
-            row10_sitrep.appendChild(temperatureIcon);
+            if (this.config.temperature == "1"){
+            	var temperatureIcon = document.createElement("td");
+            	temperatureIcon.className = "wi wi-thermometer";
+            	row10_sitrep.appendChild(temperatureIcon);
             
-            var temperature = document.createElement("td"); //span
-            temperature.innerHTML = " " + this.temperature + "&deg;";
-            row10_sitrep.appendChild(temperature);
-            
+            	var temperature = document.createElement("td"); //span
+            	temperature.innerHTML = " " + this.temperature + "&deg;";
+            	row10_sitrep.appendChild(temperature);
+            	wrapper.appendChild(row10_sitrep);
+            }
         
-			wrapper.appendChild(row_sitrep);
-			wrapper.appendChild(row1_sitrep);
-			wrapper.appendChild(row2_sitrep);
-			wrapper.appendChild(row3_sitrep);
-			wrapper.appendChild(row4_sitrep);
-			wrapper.appendChild(row5_sitrep);
-			wrapper.appendChild(row6_sitrep);
-			wrapper.appendChild(row7_sitrep);
-			wrapper.appendChild(row8_sitrep);
-			wrapper.appendChild(row9_sitrep);
-			wrapper.appendChild(row10_sitrep);
-            }
             console.log(wrapper);
 	    return wrapper;
     },
