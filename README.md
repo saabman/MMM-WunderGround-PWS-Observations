@@ -6,9 +6,12 @@ Requires WunderGround API Key. Available for free for PWS opperators
 Your Station ID.
 
 {
+
     module: 'MMM-WunderGround-PWS-Observations',
+    
     position: 'top_right',
     config: {
+    
         apikey: '<your WunderGround API Key', // private; don't share!
         pws: '<your slected PWS id>', //
         roundTmpDecs:1,
