@@ -11,8 +11,7 @@ Requires WunderGround API Key. Available for free for PWS opperators
 
 Your Station ID.
 
-<img src ="https://github.com/saabman/MMM-WunderGround-PWS-Observations/blob/main/Screen%20Shot%202021-01-17%20at%2022.32.06.png"
->
+<img src ="https://github.com/saabman/MMM-WunderGround-PWS-Observations/blob/main/Screen%20Shot%202021-01-17%20at%2022.32.06.png">
 {
 
     module: 'MMM-WunderGround-PWS-Observations',
