@@ -10,7 +10,8 @@ The Weather Icons used in this module are created and maintained by Erik Flowers
 Requires WunderGround API Key. Available for free for PWS opperators
 
 Your Station ID.
-
+<img>https://github.com/saabman/MMM-WunderGround-PWS-Observations/blob/main/Screen%20Shot%202021-01-17%20at%2022.32.06.png
+</img>
 {
 
     module: 'MMM-WunderGround-PWS-Observations',
