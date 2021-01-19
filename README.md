@@ -67,7 +67,71 @@ The following properties can be configured:
 		</tr>
 		<tr>
 			<td><code>humidity</code></td>
-			<td>Displays hunidity data<br>
+			<td>Displays humidity data<br>
+				<br><b>Possible values:</b> <code>0</code> - <code>1</code>
+				<br><b>Default value:</b> <code>1</code> (Will display data)
+				<br>This value is optional. By default the data will be displayed.
+			</td>
+		</tr>
+		<tr>
+			<td><code>UV</code></td>
+			<td>Displays UV data<br>
+				<br><b>Possible values:</b> <code>0</code> - <code>1</code>
+				<br><b>Default value:</b> <code>0</code> (Will not display data)
+				<br>This value is optional. By default the data will not be displayed.
+			</td>
+		</tr>
+		<tr>
+			<td><code>rain</code></td>
+			<td>Displays rain fall data<br>
+				<br><b>Possible values:</b> <code>0</code> - <code>1</code>
+				<br><b>Default value:</b> <code>1</code> (Will display data)
+				<br>This value is optional. By default the data will be displayed.
+			</td>
+		</tr>
+		<tr>
+			<td><code>rainRate</code></td>
+			<td>Displays rain rate data<br>
+				<br><b>Possible values:</b> <code>0</code> - <code>1</code>
+				<br><b>Default value:</b> <code>1</code> (Will display data)
+				<br>This value is optional. By default the data will be displayed.
+			</td>
+		</tr>
+		<tr>
+			<td><code>pressure</code></td>
+			<td>Displays atmospheric pressure data<br>
+				<br><b>Possible values:</b> <code>0</code> - <code>1</code>
+				<br><b>Default value:</b> <code>1</code> (Will display data)
+				<br>This value is optional. By default the data will be displayed.
+			</td>
+		</tr>
+		<tr>
+			<td><code>dewpoint</code></td>
+			<td>Displays dewpoint temperature<br>
+				<br><b>Possible values:</b> <code>0</code> - <code>1</code>
+				<br><b>Default value:</b> <code>1</code> (Will display data)
+				<br>This value is optional. By default the data will be displayed.
+			</td>
+		</tr>
+		<tr>
+			<td><code>windChill</code></td>
+			<td>Displays wind chill temperature<br>
+				<br><b>Possible values:</b> <code>0</code> - <code>1</code>
+				<br><b>Default value:</b> <code>1</code> (Will display data)
+				<br>This value is optional. By default the data will be displayed.
+			</td>
+		</tr>
+		<tr>
+			<td><code>heatIndex</code></td>
+			<td>Displays heat index temperature<br>
+				<br><b>Possible values:</b> <code>0</code> - <code>1</code>
+				<br><b>Default value:</b> <code>1</code> (Will display data)
+				<br>This value is optional. By default the data will be displayed.
+			</td>
+		</tr>
+		<tr>
+			<td><code>temperature</code></td>
+			<td>Displays current temperature<br>
 				<br><b>Possible values:</b> <code>0</code> - <code>1</code>
 				<br><b>Default value:</b> <code>1</code> (Will display data)
 				<br>This value is optional. By default the data will be displayed.
@@ -95,7 +159,6 @@ The following properties can be configured:
 				<br><b>Default value:</b> uses value of <i>config.language</i>
 			</td>
 		</tr>
-
 		<tr>
 			<td><code>sysstat</code></td>
 			<td>Toggle sysinfo display<br>
