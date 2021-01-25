@@ -21,6 +21,16 @@ Module.register("MMM-WunderGround-PWS-Observations", {
         apiBase: "https://api.weather.com/v2/pws/observations/",
         socknot: "GET_WUNDERGROUND",
 		sockrcv: "WUNDERGROUND",
+		wind: 1,	//1 displays the parameters 0 hides it
+        humidity: 1,
+        UV: 0,
+        rain: 1,
+        rainRate: 1,
+        pressure: 1,
+        dewPoint: 1,
+        windChill: 1,
+        heatIndex: 1,
+        temperature: 1,
         },
         
     // Define required translations.
@@ -116,7 +126,7 @@ Module.register("MMM-WunderGround-PWS-Observations", {
 			console.log(row_sitrep);
 			
 			var row2_sitrep = document.createElement("tr");
-			row2_sitrep.className = "pop";
+			//row2_sitrep.className = "pop";
 			
 			var row3_sitrep = document.createElement("tr");
 			row3_sitrep.className = "pop";
@@ -225,9 +235,9 @@ Module.register("MMM-WunderGround-PWS-Observations", {
             
             	var rainRate = document.createElement("td");
             	if (this.config.units == "metric") {
-                	rainRate.innerHTML = " " + this.rainRate + "mmph";
+                	rainRate.innerHTML = "  " + this.rainRate + "mmph";
             	} else {
-            		rainRate.innerHTML = this.rainRate + "\"ph "; //this.rainRate
+            		rainRate.innerHTML = "  " +this.rainRate + "\"ph "; //this.rainRate
             	}
             	row5_sitrep.appendChild(rainRate);
             	wrapper.appendChild(row5_sitrep);

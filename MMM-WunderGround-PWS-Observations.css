@@ -45,6 +45,7 @@
  } 
 
 .MMM-WunderGround-PWS-Observations .pop {
+  line-height: 27px;
    text-align: right;
   font-size: 75%;
 } 
@@ -69,3 +70,4 @@
   font-size: 200%;
   color: #FF4C4C;
 }
+
