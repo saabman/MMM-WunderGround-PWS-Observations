@@ -217,9 +217,9 @@ Module.register("MMM-WunderGround-PWS-Observations", {
                         
             	var rainfall = document.createElement("td");
             	if (this.config.units == "metric") {
-                	rainfall.innerHTML = " " + this.rainfall + "mm";
+                	rainfall.innerHTML = " " + this.rainfall + "<sub>mm</sub>";
             	} else {
-                	rainfall.innerHTML = " " + this.rainfall + "\"";
+                	rainfall.innerHTML = " " + this.rainfall + "<sub>\"</sub>";
             	}
             	row4_sitrep.appendChild(rainfall);
             	wrapper.appendChild(row4_sitrep);
@@ -233,9 +233,9 @@ Module.register("MMM-WunderGround-PWS-Observations", {
             
             	var rainRate = document.createElement("td");
             	if (this.config.units == "metric") {
-                	rainRate.innerHTML = "  " + this.rainRate + "mmph";
+                	rainRate.innerHTML = "  " + this.rainRate + "<sub>mmh</sub>";
             	} else {
-            		rainRate.innerHTML = "  " +this.rainRate + "\"ph "; //this.rainRate
+            		rainRate.innerHTML = "  " +this.rainRate + "<sub>\"ph</sub>"; //this.rainRate
             	}
             	row5_sitrep.appendChild(rainRate);
             	wrapper.appendChild(row5_sitrep);
