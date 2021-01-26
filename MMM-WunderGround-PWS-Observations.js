@@ -154,9 +154,9 @@ Module.register("MMM-WunderGround-PWS-Observations", {
 			
 			if (this.config.wind == "1"){
 			
-				var windIcon = document.createElement("td");
-				windIcon.className = "wi wi-windy";
-				row_sitrep.appendChild(windIcon);
+				var windDirectionIcon = document.createElement("td");
+            	windDirectionIcon.className = "wi wi-wind " + this.windDirection;
+            	row_sitrep.appendChild(windDirectionIcon);
 			
             	var wind = document.createElement("td");
             	console.log(wind);
@@ -168,9 +168,7 @@ Module.register("MMM-WunderGround-PWS-Observations", {
             
             	row_sitrep.appendChild(wind);
             
-            	var windDirectionIcon = document.createElement("td");
-            	windDirectionIcon.className = "wi wi-wind " + this.windDirection;
-            	row_sitrep.appendChild(windDirectionIcon);
+            	
             	wrapper.appendChild(row_sitrep);
             
             	var windGustIcon = document.createElement("td");
