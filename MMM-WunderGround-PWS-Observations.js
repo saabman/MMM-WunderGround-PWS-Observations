@@ -190,14 +190,14 @@ Module.register("MMM-WunderGround-PWS-Observations", {
             	
 			}
 			
-			if (this.config.humidity == "1"){ 
+	    if (this.config.humidity == "1"){ 
             	var HumidityIcon = document.createElement("td");
             	HumidityIcon.className = "pop wi wi-humidity lpad";
             	row2_sitrep.appendChild(HumidityIcon);
 
             	var HumidityTxt = document.createElement("td");
             	HumidityTxt.className = "popr";
-            	HumidityTxt.innerHTML = this.Humidity + "&nbsp;";
+            	HumidityTxt.innerHTML = this.Humidity + "%";
             	row2_sitrep.appendChild(HumidityTxt);
             	table_sitrep.appendChild(row2_sitrep);
             	
