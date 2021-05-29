@@ -306,7 +306,7 @@ Module.register("MMM-WunderGround-PWS-Observations", {
             
             if (this.config.temperature == "1"){
             	var temperatureIcon = document.createElement("td");
-            	temperatureIcon.className = "pop wi wi-thermometer";
+            	temperatureIcon.className = "large1 wi wi-thermometer";
             	row10_sitrep.appendChild(temperatureIcon);
             
             	var temperature = document.createElement("td");
