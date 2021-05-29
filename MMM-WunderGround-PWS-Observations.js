@@ -310,7 +310,7 @@ Module.register("MMM-WunderGround-PWS-Observations", {
             	row10_sitrep.appendChild(temperatureIcon);
             
             	var temperature = document.createElement("td");
-            	temperature.className = "popr";
+            	temperature.className = "large1";
             	temperature.innerHTML = " " + this.temperature + "&deg;";
             	row10_sitrep.appendChild(temperature);
             	table_sitrep.appendChild(row10_sitrep);
