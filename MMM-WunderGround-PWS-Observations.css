@@ -80,6 +80,13 @@
   float: right;
 }
 
+.MMM-WunderGround-PWS-Observations .large2 {
+  line-height: 1.5cm !important;
+  text-align: right;
+  font-size: 75%;
+  padding-left: 10px;
+}
+
 .MMM-WunderGround-PWS-Observations .region.middle.center {
 	width: 150px;
 	float: right;
