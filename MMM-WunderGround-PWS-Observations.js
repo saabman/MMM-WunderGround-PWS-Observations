@@ -176,7 +176,7 @@ Module.register("MMM-WunderGround-PWS-Observations", {
             
             	var windGustIcon = document.createElement("td");
             	windGustIcon.className = "pop wi wi-strong-wind";// + this.windGust;
-            	row1_sitrep.appendChild(windGustIcon);
+            	row_sitrep.appendChild(windGustIcon);
             
             	var windGust = document.createElement("td");
             	windGust.className = "popr";
@@ -185,8 +185,8 @@ Module.register("MMM-WunderGround-PWS-Observations", {
             	} else {
                 	windGust.innerHTML = " " + this.windGust + "mph";
             	}
-            	row1_sitrep.appendChild(windGust);
-            	table_sitrep.appendChild(row1_sitrep);
+            	row_sitrep.appendChild(windGust);
+            	table_sitrep.appendChild(row_sitrep);
             	
 			}
 			
@@ -206,13 +206,13 @@ Module.register("MMM-WunderGround-PWS-Observations", {
             if (this.config.UV == "1"){
             	var UVIcon = document.createElement("td");
             	UVIcon.className = "pop wi wi-hot";
-            	row3_sitrep.appendChild(UVIcon);
+            	row2_sitrep.appendChild(UVIcon);
             
             	var UVTxt = document.createElement("td");
             	UVTxt.className ="popr";
             	UVTxt.innerHTML = this.UV;
-            	row3_sitrep.appendChild(UVTxt);
-            	table_sitrep.appendChild(row3_sitrep);
+            	row2_sitrep.appendChild(UVTxt);
+            	table_sitrep.appendChild(row2_sitrep);
             	
             }
   
@@ -236,7 +236,7 @@ Module.register("MMM-WunderGround-PWS-Observations", {
             if (this.config.rainRate == "1"){
             	var rainRateIcon = document.createElement("td");
             	rainRateIcon.className = "pop wi wi-raindrops";
-            	row5_sitrep.appendChild(rainRateIcon);
+            	row4_sitrep.appendChild(rainRateIcon);
             
             	var rainRate = document.createElement("td");
             	rainRate.className ="popr";
@@ -245,8 +245,8 @@ Module.register("MMM-WunderGround-PWS-Observations", {
             	} else {
             		rainRate.innerHTML = "  " +this.rainRate + "\"ph"; //this.rainRate
             	}
-            	row5_sitrep.appendChild(rainRate);
-            	table_sitrep.appendChild(row5_sitrep);
+            	row4_sitrep.appendChild(rainRate);
+            	table_sitrep.appendChild(row4_sitrep);
             	
             }
             
@@ -267,13 +267,13 @@ Module.register("MMM-WunderGround-PWS-Observations", {
             	var dewPointIcon = document.createElement("td");
             	dewPointIcon.className ="pop";
             	dewPointIcon.innerHTML = "DP";
-            	row7_sitrep.appendChild(dewPointIcon);
+            	row6_sitrep.appendChild(dewPointIcon);
             
             	var dewPoint = document.createElement("td");
             	dewPoint.className ="popr";
             	dewPoint.innerHTML = " " + this.dewpt + "&deg;";
-            	row7_sitrep.appendChild(dewPoint);
-            	table_sitrep.appendChild(row7_sitrep);
+            	row6_sitrep.appendChild(dewPoint);
+            	table_sitrep.appendChild(row6_sitrep);
             	
             }
             
@@ -295,12 +295,12 @@ Module.register("MMM-WunderGround-PWS-Observations", {
             	var heatIndexIcon = document.createElement("td");
             	heatIndexIcon.className = "pop";
             	heatIndexIcon.innerHTML = "HI";
-            	row9_sitrep.appendChild(heatIndexIcon);
+            	row8_sitrep.appendChild(heatIndexIcon);
             
             	var heatIndex = document.createElement("td");
             	heatIndex.className = "popr";
             	heatIndex.innerHTML = " " + this.heatIndex + "&deg;";
-            	row9_sitrep.appendChild(heatIndex);
+            	row8_sitrep.appendChild(heatIndex);
             	table_sitrep.appendChild(row9_sitrep);
             }
             
