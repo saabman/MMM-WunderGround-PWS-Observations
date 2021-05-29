@@ -306,11 +306,11 @@ Module.register("MMM-WunderGround-PWS-Observations", {
             
             if (this.config.temperature == "1"){
             	var temperatureIcon = document.createElement("td");
-            	temperatureIcon.className = "large1 wi wi-thermometer";
+            	temperatureIcon.className = "large2 wi wi-thermometer";
             	row10_sitrep.appendChild(temperatureIcon);
             
             	var temperature = document.createElement("td");
-            	temperature.className = "large1";
+            	temperature.className = "large2";
             	temperature.innerHTML = " " + this.temperature + "&deg;";
             	row10_sitrep.appendChild(temperature);
             	table_sitrep.appendChild(row10_sitrep);
