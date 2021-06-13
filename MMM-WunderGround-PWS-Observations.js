@@ -157,7 +157,7 @@ Module.register("MMM-WunderGround-PWS-Observations", {
 			if (this.config.wind == "1"){
 			
 				var windDirectionIcon = document.createElement("td");
-            	windDirectionIcon.className = "wi wi-wind " + this.windDirection;
+            	windDirectionIcon.className = "wi wi-strong-wind";
             	row_sitrep.appendChild(windDirectionIcon);
 			
             	var wind = document.createElement("td");
